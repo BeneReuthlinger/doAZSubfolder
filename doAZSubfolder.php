@@ -17,7 +17,7 @@
     if (!is_dir($ab))
       mkdir($ab);
     
-    if (preg_match('/windows/i', $_SERVER['OS']))
+    if (isset($_SERVER['OS']) && preg_match('/windows/i', $_SERVER['OS']))
       $cmd = 'move "' . $filedir . '" "' . $ab . '/"';
     else
       $cmd = 'mv "' . $filedir . '" "' . $ab . '/"';
